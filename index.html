@@ -3,7 +3,7 @@
 <html lang="ja"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Nikkei Lab Carrier | 日経の理系院生向け就活支援</title>
+<title>Lab Carrier | 日経の理系院生向け就活支援</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -93,6 +93,39 @@
             transform: translateX(-50%);
             z-index: 0;
         }
+        .quote-bg {
+            background: linear-gradient(180deg, rgba(244, 247, 255, 0) 0%, rgba(244, 247, 255, 1) 100%);
+        }
+        .speech-bubble {
+            position: relative;
+        }
+        .speech-bubble-right::after {
+            content: '';
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 12px 0 12px 12px;
+            border-color: transparent transparent transparent white;
+            filter: drop-shadow(4px 0 2px rgba(0,0,0,0.05));
+        }
+        .speech-bubble-left::after {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 12px 12px 12px 0;
+            border-color: transparent white transparent transparent;
+            filter: drop-shadow(-4px 0 2px rgba(0,0,0,0.05));
+        }
+        /* Border color variations like in the reference image */
+        .bubble-blue { border: 2px solid #a6c8ff; }
+        .bubble-yellow { border: 2px solid #ffdcbf; }
+        .bubble-pink { border: 2px solid #ffb0c8; }
+        
+        .bubble-blue::after { border-left-color: white; border-right-color: transparent; }
+        .speech-bubble-left.bubble-yellow::after { border-right-color: white; border-left-color: transparent; }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface antialiased">
@@ -100,7 +133,7 @@
 <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm">
 <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
 <div class="flex items-center gap-8">
-<div class="text-2xl font-black tracking-tighter text-blue-800">Nikkei Lab Carrier</div>
+<div class="text-2xl font-black tracking-tighter text-blue-800">Lab Carrier</div>
 </div>
 <div class="flex items-center gap-3">
 <button class="px-5 py-2 text-sm font-bold text-slate-600 hover:bg-blue-50/50 transition-all duration-300 rounded-lg">ログイン</button>
@@ -119,18 +152,12 @@
 <div class="w-full lg:w-1/2 text-white">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/30">
 <span class="material-symbols-outlined text-sm" data-icon="rocket_launch">rocket_launch</span>FOR SCIENCE GRADUATE STUDENTS
-                </div>
-<h1 class="text-4xl lg:text-5xl xl:text-6xl font-headline font-extrabold leading-tight tracking-tight mb-8">
-                    理系院生のための<br/>
-<span class="text-white">自己分析×就活サービス</span>
-</h1>
-<p class="text-white/90 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">
-                    研究経験から、あなたに合う仕事と企業がわかる。<br/>
-                    研究を頑張ってきた人ほど、就活で迷わないために。
-                </p>
+                    </div>
+<h1 class="text-4xl lg:text-5xl xl:text-6xl font-headline font-extrabold leading-tight tracking-tight mb-8">活かすのは​研究成果じゃない。<br/>研究に​取り組む『君』​その​ものだ。</h1>
+<p class="text-white/90 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">日々の研究活動の情報から、あなたの強みをAIが言語化。<br/>理系院生のための自己分析x就活支援サービス。</p>
 <div class="flex flex-col sm:flex-row gap-4">
 <button class="px-8 py-4 bg-white text-primary rounded-xl font-bold text-lg flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary-fixed transition-all group shadow-xl px-12 py-6 text-xl sm:text-2xl shadow-2xl gap-4">
-<span>3分で診断開始 | 無料で診断する</span>
+<span>無料で診断する（所要時間：約5分）</span>
 <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </div>
@@ -151,7 +178,7 @@
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="travel_explore">travel_explore</span>
 </div>
 <h3 class="text-xl font-bold mb-6 leading-snug">自分の研究が, 企業でどう活かせるのか想像できない</h3>
-<p class="text-on-surface-variant leading-relaxed text-sm">研究を進める中で身についた力はあるはずなのに、それがどんな仕事に繋がるのかが分からず、企業選びの基準が持てない。</p>
+<p class="text-on-surface-variant leading-relaxed text-sm">研究を進める中で身についた力はあるはずなのに、 それがどんな仕事に繋がるのかが分からず、企業選びの基準が持てない。</p>
 </div>
 <!-- Problem Card 2 -->
 <div class="p-10 bg-surface-container-lowest rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed/50 hover:shadow-md transition-all group flex flex-col min-h-[320px]">
@@ -159,7 +186,7 @@
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="visibility_off">visibility_lock</span>
 </div>
 <h3 class="text-xl font-bold mb-6 leading-snug">研究内容が専門的すぎて、就職先の選択肢が見えない</h3>
-<p class="text-on-surface-variant leading-relaxed text-sm">研究テーマがニッチであるほど、「この分野でしか働けないのではないか」と感じてしまい、他の選択肢を考えることが難しくなる。</p>
+<p class="text-on-surface-variant leading-relaxed text-sm">研究テーマがニッチであるほど、 「この分野でしか働けないのではないか」と感じてしまい、 他の選択肢を考えることが難しくなる。</p>
 </div>
 <!-- Problem Card 3 -->
 <div class="p-10 bg-surface-container-lowest rounded-2xl shadow-sm border border-transparent hover:border-primary-fixed/50 hover:shadow-md transition-all group flex flex-col min-h-[320px]">
@@ -188,8 +215,8 @@
 </div>
 <h3 class="text-lg font-bold mb-4">研究経験を入力（約5分）</h3>
 <p class="text-on-surface-variant text-sm leading-relaxed px-4">
-                        これまで取り組んできた研究内容や、課題への向き合い方について簡単な質問に答えます。専門知識ではなく、「どのように考えたか」「どう進めたか」を入力します。
-                    </p>
+                            これまで取り組んできた研究内容や、課題への向き合い方について簡単な質問に答えます。専門知識ではなく、「どのように考えたか」「どう進めたか」を入力します。
+                        </p>
 </div>
 <!-- STEP 2 -->
 <div class="relative flex flex-col items-center text-center group">
@@ -199,8 +226,8 @@
 </div>
 <h3 class="text-lg font-bold mb-4">思考プロセスと強みを分析</h3>
 <p class="text-on-surface-variant text-sm leading-relaxed px-4">
-                        入力内容をもとに、課題設定力・問題解決力・思考の特徴などを分析します。研究テーマではなく、「取り組み方」からあなたの強みを可視化します。
-                    </p>
+                            入力内容をもとに、課題設定力・問題解決力・思考の特徴などを分析します。研究テーマではなく、「取り組み方」からあなたの強みを可視化します。
+                        </p>
 </div>
 <!-- STEP 3 -->
 <div class="relative flex flex-col items-center text-center group">
@@ -210,8 +237,8 @@
 </div>
 <h3 class="text-lg font-bold mb-4">向いている仕事と企業を提案</h3>
 <p class="text-on-surface-variant text-sm leading-relaxed px-4">
-                        分析結果をもとに、あなたに合う職種と企業を具体的な理由付きで提示します。自分では気づかなかった選択肢を知ることができます。
-                    </p>
+                            分析結果をもとに、あなたに合う職種と企業を具体的な理由付きで提示します。自分では気づかなかった選択肢を知ることができます。
+                        </p>
 </div>
 <!-- STEP 4 -->
 <div class="relative flex flex-col items-center text-center group">
@@ -221,15 +248,12 @@
 </div>
 <h3 class="text-lg font-bold mb-4">企業からスカウトが届く</h3>
 <p class="text-on-surface-variant text-sm leading-relaxed px-4">
-                        分析結果をもとに、あなたに合う企業からスカウトが届きます。なぜ自分に声がかかったのかが分かるため、納得して選考に進めます。
-                    </p>
+                            分析結果をもとに、あなたに合う企業からスカウトが届きます。なぜ自分に声がかかったのかが分かるため、納得して選考に進めます。
+                        </p>
 </div>
 </div>
-<div class="text-center pt-8 border-t border-surface-container-high">
-<p class="text-on-surface font-medium mb-8">まずは、自分の研究がどんな可能性につながるのか、診断で確かめてみてください。</p>
-<button class="px-12 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-xl hover:bg-on-primary-fixed-variant transition-all transform hover:-translate-y-1">
-                    無料で診断する
-                </button>
+<div class="text-center pt-8">
+<button class="px-12 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-xl hover:bg-on-primary-fixed-variant transition-all transform hover:-translate-y-1">無料で診断する（所要時間：約5分）</button>
 </div>
 </div>
 </section>
@@ -239,10 +263,10 @@
 <div class="text-center mb-20">
 <h2 class="text-4xl lg:text-5xl font-headline font-black mb-6 text-primary tracking-tight">診断すると、ここまで見える</h2>
 <p class="text-on-surface-variant text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
-                    あなたの研究経験をもとに、<br class="hidden sm:block"/>
+                        あなたの研究経験をもとに、<br class="hidden sm:block"/>
 <span class="text-primary font-bold">「強み」「向いている仕事」「企業との相性」</span>を<br class="hidden sm:block"/>
-                    理由付きで具体的に可視化します。
-                </p>
+                        理由付きで具体的に可視化します。
+                    </p>
 </div>
 <div class="relative report-section">
 <!-- WHY Section -->
@@ -274,8 +298,8 @@
 </ul>
 <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
 <p class="text-xs lg:text-sm font-bold text-primary leading-relaxed">
-                                    研究の「テーマ」ではなく、 「どのように取り組んできたか」から強みを分析しています。
-                                </p>
+                                        研究の「テーマ」ではなく、 「どのように取り組んできたか」から強みを分析しています。
+                                    </p>
 </div>
 </div>
 </div>
@@ -306,12 +330,12 @@
 </div>
 <p class="text-xs lg:text-sm font-bold text-on-surface-variant flex items-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="info">info</span>
-                                あなたの思考の特徴から、 強みが活かせる職種を提示しています。
-                            </p>
+                                    あなたの思考の特徴から、 強みが活かせる職種を提示しています。
+                                </p>
 </div>
 </div>
 </div>
-<!-- CONVINCE Section -->
+<!-- REASON Section -->
 <div class="relative z-10 mb-20">
 <div class="flex flex-col md:flex-row gap-8 items-start">
 <div class="flex-shrink-0 w-full md:w-1/3">
@@ -325,12 +349,12 @@
 </div>
 <div class="flex-grow w-full bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
 <div class="mb-4 inline-block px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold text-slate-500">
-                                例えばコンサルティングの場合
-                            </div>
+                                    例えばコンサルティングの場合
+                                </div>
 <div class="border-l-4 border-tertiary-container pl-6 py-2">
 <p class="text-on-surface font-bold leading-relaxed">
-                                    複雑な情報を整理し、課題を構造化する力が求められるため、 あなたの「前提整理力」や「仮説構築力」が活かされます。
-                                </p>
+                                        複雑な情報を整理し、課題を構造化する力が求められるため、 あなたの「前提整理力」や「仮説構築力」が活かされます。
+                                    </p>
 </div>
 </div>
 </div>
@@ -351,14 +375,14 @@
 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
 <div class="font-black text-primary mb-2">〇〇株式会社（IT）</div>
 <p class="text-sm font-medium text-on-surface-variant leading-relaxed">
-                                    新規事業やデータ活用領域で、 課題設定から関わる機会が多く、あなたの思考特性と一致。
-                                </p>
+                                        新規事業やデータ活用領域で、 課題設定から関わる機会が多く、あなたの思考特性と一致。
+                                    </p>
 </div>
 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
 <div class="font-black text-primary mb-2">△△株式会社（コンサル）</div>
 <p class="text-sm font-medium text-on-surface-variant leading-relaxed">
-                                    複雑な課題を分解し、仮説ベースで解決する業務が中心で、 あなたの強みが活かされる。
-                                </p>
+                                        複雑な課題を分解し、仮説ベースで解決する業務が中心で、 あなたの強みが活かされる。
+                                    </p>
 </div>
 </div>
 </div>
@@ -367,117 +391,72 @@
 <!-- Section CTA -->
 <div class="mt-16 text-center pt-16 border-t border-slate-100">
 <p class="text-on-surface font-bold text-lg mb-8">
-                    まずは、自分の研究がどんな可能性につながるのか<br class="hidden sm:block"/>
-                    診断で確かめてみてください
-                </p>
-<button class="px-16 py-5 bg-primary text-white rounded-2xl font-black text-xl hover:shadow-2xl hover:bg-on-primary-fixed-variant transition-all transform hover:-translate-y-1 active:scale-95 shadow-lg">
-                    【無料で診断する】
-                </button>
+                        まずは、自分の研究がどんな可能性につながるのか<br class="hidden sm:block"/>
+                        診断で確かめてみてください
+                    </p>
+<button class="px-16 py-5 bg-primary text-white rounded-2xl font-black text-xl hover:shadow-2xl hover:bg-on-primary-fixed-variant transition-all transform hover:-translate-y-1 active:scale-95 shadow-lg">無料で診断する（所要時間：約5分）</button>
 </div>
 </div>
 </section>
 <!-- Testimonials -->
 <section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-5xl mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl lg:text-4xl font-headline font-bold mb-4">利用者の声</h2>
-<p class="text-on-surface-variant">Nikkei Lab Carrierを通じて理想のキャリアを見つけた先輩たち</p>
+<div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Card 1: Theoretical Physics -->
-<div class="bg-surface-container-lowest rounded-3xl hover:shadow-lg transition-all group flex flex-col h-full p-8 border border-slate-100">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="functions">functions</span>
-</div>
-<div>
-<div class="font-bold text-primary tracking-wider uppercase bg-primary-fixed py-0.5 rounded-full inline-block whitespace-nowrap text-[11px] px-3">理論物理学専攻（修士）／IT系志望</div>
-</div>
-</div>
-<h3 class="text-lg font-bold mb-4 leading-snug">複雑な前提を仮説にする力が、エンジニアの適性と診断された</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed italic">「数式と向き合う日々がビジネスに繋がるか不安でしたが、診断で『高い仮説構築力』と評価され、納得感を持ってIT業界を志望できました。」</p>
-</div>
-<!-- Card 2: Mathematical Sciences -->
-<div class="bg-surface-container-lowest rounded-3xl hover:shadow-lg transition-all group flex flex-col h-full p-8 border border-slate-100">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="calculate">calculate</span>
-</div>
-<div>
-<div class="font-bold text-primary tracking-wider uppercase bg-primary-fixed py-0.5 rounded-full inline-block whitespace-nowrap text-[11px] px-3">数理科学専攻（修士）／コンサル志望</div>
+<div class="space-y-16">
+<!-- Testimonial 1: Pharma (Right bubble) -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+<div class="flex-grow order-2 md:order-1">
+<div class="speech-bubble speech-bubble-right bubble-blue bg-white p-8 rounded-3xl shadow-lg border-2">
+<h3 class="text-xl font-black text-primary mb-4">時間ない人こそやった方がいい</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm lg:text-base">
+                                    みんなが業界地図とか業界分析をする中で、自分はなかなか時間が取れないことに課題を感じてました。このサービスでは、普段の研究活動を入力するだけで、自分の適正職種を企業が棚卸しできるので、時間がない人でもできるので、みんな就活前にはやった方がいいと思いました。
+                                </p>
 </div>
 </div>
-<h3 class="text-lg font-bold mb-4 leading-snug">抽象的な理論から、具体的なキャリアパスが見えた</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed italic">「自分の研究は世の中から遠いと思っていましたが、思考のプロセスを可視化することで、コンサルティング職での活かし方が明確になりました。」</p>
+<div class="flex-shrink-0 order-1 md:order-2 text-center w-32">
+<div class="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-3 flex items-center justify-center overflow-hidden border-2 border-primary-fixed">
+<img alt="Pharmacy Student" class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqrbzWUpxQs0o6e5UBdU8iKbOsSFCU6TbuiGlfwhU8Tvvl0XqDNAZ1lzd1WGtg2B3GXKaNGvyXWOvzLqYbtkOZIB-kb0pMBlo3T0cN4AFsBpMkZ2FKeeUcxBn84at6ni0i2xkYoZXmJn3gbssH2jMKlhYDdqFBGEMaz62BBLiIjvWp084r2eHHDSYtIHMDpusdmKQgH_m8oKcdqpeLi6MkHqNiaMnn8T34nCA8T373B-Dqpa4P0V9jV84J8H3GFhpWekEVFgRMJMj"/>
 </div>
-<!-- Card 3: Applied Chemistry -->
-<div class="bg-surface-container-lowest rounded-3xl hover:shadow-lg transition-all group flex flex-col h-full p-8 border border-slate-100">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="science">science</span>
-</div>
-<div>
-<div class="font-bold text-primary tracking-wider uppercase bg-primary-fixed py-0.5 rounded-full inline-block whitespace-nowrap text-[11px] px-3">応用化学専攻（修士）／メーカー志望</div>
+<div class="font-bold text-sm text-on-surface">薬学系修士</div>
 </div>
 </div>
-<h3 class="text-lg font-bold mb-4 leading-snug">「研究を離れる不安」から解放され、広い視野を持てた</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed italic">「研究室に籠もっていると視野が狭まりがち。診断結果が『今の経験は他でも通用する』と背中を押してくれ、前向きに挑戦できました。」</p>
+<!-- Testimonial 2: Bio (Left bubble) -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+<div class="flex-shrink-0 text-center w-32">
+<div class="w-24 h-24 rounded-full bg-secondary-container/10 mx-auto mb-3 flex items-center justify-center overflow-hidden border-2 border-secondary-fixed">
+<img alt="Biology Student" class="w-full h-full object-cover scale-x-[-1] grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwMiObjITugIcctCaBLRjZh4fQk2e9GFeOV8j407fQA08A-sqaBxcRTzMIDIMzXeOPGHl_cyJb7V4Wp7X68alwQm7LbmgDExKj-iPQ66xi8gop1DBICzOVUz0GYthOuRbtiZuROxe1p2EKTTgyx96_NWx-ax42jZxV-O9Sz0FgoiE_yEFLEmjzyJjuWuaWYqVbOe-x2jDWJpf3dtIKrYHYBEkFlyNFcICkB7MEreByBdEhfuav3TleH7kIlulHA3nzNjasrX1oQZsU"/>
 </div>
-<!-- Card 4: Molecular Biology -->
-<div class="bg-surface-container-lowest rounded-3xl hover:shadow-lg transition-all group flex flex-col h-full p-8 border border-slate-100">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="biotech">biotech</span>
+<div class="font-bold text-sm text-on-surface">生物系修士</div>
 </div>
-<div>
-<div class="font-bold text-primary tracking-wider uppercase bg-primary-fixed py-0.5 rounded-full inline-block whitespace-nowrap text-[11px] px-3">分子生物学専攻（修士）／製薬志望</div>
-</div>
-</div>
-<h3 class="text-lg font-bold mb-4 leading-snug">企業を見る基準が変わり、マッチング精度が劇的に向上</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed italic">「社名や業界だけでなく『自分の思考スタイルを活かせるか』という軸が持てたことで、本当に自分に合う企業との出会いが増えました。」</p>
-</div>
-<!-- Card 5: Mechanical Engineering -->
-<div class="bg-surface-container-lowest rounded-3xl hover:shadow-lg transition-all group flex flex-col h-full p-8 border border-slate-100">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
-</div>
-<div>
-<div class="font-bold text-primary tracking-wider uppercase bg-primary-fixed py-0.5 rounded-full inline-block whitespace-nowrap text-[11px] px-3">機械工学専攻（修士）／重工志望</div>
-</div>
-</div>
-<h3 class="text-lg font-bold mb-4 leading-snug">当たり前だと思っていた研究姿勢が、高く評価される強みだと知った</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed italic">「試行錯誤を繰り返す研究プロセスが、ビジネスのPDCAサイクルとして評価されることを知り、面接での自己PRに自信が持てました。」</p>
-</div>
-<!-- Card 6: Information Engineering -->
-<div class="bg-surface-container-lowest rounded-3xl hover:shadow-lg transition-all group flex flex-col h-full p-8 border border-slate-100">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="terminal">terminal</span>
-</div>
-<div>
-<div class="font-bold text-primary tracking-wider uppercase bg-primary-fixed py-0.5 rounded-full inline-block whitespace-nowrap text-[11px] px-3">情報工学専攻（修士）／内定済み</div>
-</div>
-</div>
-<h3 class="text-lg font-bold mb-4 leading-snug">意外な上場企業からスカウトが届き、選択肢が広がった</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed italic">「専門性が高すぎると思っていましたが、全くノーマークだった業界から熱烈なスカウトが。サービス経由の安心感もあり、スムーズに進めました。」</p>
+<div class="flex-grow">
+<div class="speech-bubble speech-bubble-left bubble-yellow bg-white p-8 rounded-3xl shadow-lg border-2">
+<h3 class="text-xl font-black text-secondary-container mb-4">研究経験が浅くても大丈夫</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm lg:text-base">
+                                    大学院に上がって早々に就活なので、使える内容がB4の研究が主になることに不安がありました。そんな状態でサービスを利用したのですが、B4の内容でも自分の強みや職種の可能性を知ることができて、就活における自信につながりました。
+                                </p>
 </div>
 </div>
 </div>
-</section>
-<!-- Brand Trust -->
-<section class="py-20 bg-surface-container-high/50 border-y border-surface-container-high">
-<div class="max-w-7xl mx-auto px-6 text-center">
-<div class="flex flex-col items-center gap-6">
-<div class="flex items-center gap-4">
-<div class="h-px w-12 bg-outline-variant"></div>
-<span class="text-sm font-bold tracking-[0.2em] text-on-surface-variant uppercase">Produced by</span>
-<div class="h-px w-12 bg-outline-variant"></div>
+<!-- Testimonial 3: Physics (Right bubble) -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+<div class="flex-grow order-2 md:order-1">
+<div class="speech-bubble speech-bubble-right bubble-pink bg-white p-8 rounded-3xl shadow-lg border-2">
+<h3 class="text-xl font-black text-[#e06666] mb-4">一般的な性格診断と全然違う</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm lg:text-base">
+                                    研究活動をもとに適職・企業を診断できるサービスは今までにないと感じました。特に性格診断中心の他サービスよりも、自分の研究内容や活動に基づく診断結果なので納得感・信頼感が違うと感じました。
+                                </p>
 </div>
-<div class="flex items-center justify-center">
-<div class="text-3xl font-black text-blue-800 tracking-tighter">Nikkei Lab Carrier</div>
 </div>
-<p class="max-w-2xl text-on-surface-variant text-sm mt-4">理系就活の専門知見を活かし、日本の技術革新を支える次世代のリーダーたちを、最高の舞台へと導きます。</p>
+<div class="flex-shrink-0 order-1 md:order-2 text-center w-32">
+<div class="w-24 h-24 rounded-full bg-tertiary-container/10 mx-auto mb-3 flex items-center justify-center overflow-hidden border-2 border-tertiary-fixed">
+<img alt="Physics Student" class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGBTEoCOtpi4ib6l24VwgGFiYyRez6opITYPHW-CMXaGg68TwI1A1LoKMgnpvRAtGUhztrGI8KlHBSGsWwUVOYFc0DnFSwQFDQr6TwnJUf6WGKy4kwbTF8tjOQGvs8Kq9ubm8i-75D3MIqWqEQhK5ebpA8tE9dnELK9c2EM7Tp0tpvFAPJ3AaSCLDto9RaSYsyQl7t9HshchbVaR3ib96u2yXoqiqZn-oJecmkC3-BOIQ67YfY9hqOuIQc0Btrm-23Etlf5658AklV"/>
+</div>
+<div class="font-bold text-sm text-on-surface">理学系修士</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -486,18 +465,12 @@
 <div class="absolute inset-0 hero-gradient"></div>
 <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 <h2 class="text-4xl lg:text-6xl font-headline font-extrabold text-white mb-8">
-                あなたの可能性を、<br/>解き放とう。
-            </h2>
-<p class="text-white/80 text-lg lg:text-xl mb-12">
-                登録はわずか1分。今すぐ診断を受けて、あなたの専門性を求める企業と繋がろう。
-            </p>
+                    あなたの可能性を、<br/>解き放とう.
+                </h2>
 <div class="flex flex-col items-center gap-6">
 <button class="px-12 py-5 bg-white text-primary rounded-2xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all active:scale-95">
-                    無料で会員登録する
-                </button>
-<div class="text-white/60 text-sm">
-                    利用規約およびプライバシーポリシーに同意の上、ご登録ください。
-                </div>
+                        無料で会員登録する
+                    </button>
 </div>
 </div>
 </section>
@@ -506,7 +479,7 @@
 <footer class="w-full border-t border-slate-200 bg-slate-50">
 <div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-7xl mx-auto">
 <div class="flex flex-col items-center md:items-start gap-4">
-<div class="font-bold text-lg text-slate-800">Nikkei Lab Carrier</div>
+<div class="font-bold text-lg text-slate-800">Lab Carrier</div>
 <p class="font-['Manrope'] text-sm tracking-wide text-slate-500">© Nikkei Inc. All Rights Reserved.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
